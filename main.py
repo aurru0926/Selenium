@@ -8,7 +8,8 @@ class PythonOrgSearch(unittest.TestCase):
 
     def setUp(self):
         print("setup")
-
+        self.driver = webdriver.Firefox()
+        
     def search_query(self, query):
         with webdriver.Firefox() as driver:
             driver.get("http://google.com")
@@ -21,6 +22,7 @@ class PythonOrgSearch(unittest.TestCase):
             assert search_result_page.is_results_found()
 
     def test_search_python_concurrent(self):
+        # List of serach queries you want to scrape
         search_queries = ["How many calroies in a banana", "How much HP does a 2022 Subaru wrx have?", "selenium"]
 
         
@@ -29,6 +31,9 @@ class PythonOrgSearch(unittest.TestCase):
        
         with ThreadPoolExecutor(max_threads) as executor:
             executor.map(self.search_query, search_queries)
+            
+    def tearDown(self):
+        self.driver.close()
 
 if __name__ == "__main__":
     unittest.main()
