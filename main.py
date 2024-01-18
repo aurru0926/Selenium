@@ -23,7 +23,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_search_python_concurrent(self):
         # List of serach queries you want to scrape
-        search_queries = ["How many calroies in a banana", "How much HP does a 2022 Subaru wrx have?", "selenium"]
+        search_queries = ["How many calories in a banana", "How much HP does a 2022 Subaru wrx have?", "selenium"]
 
         
         max_threads = 3
