@@ -22,7 +22,7 @@ class PythonOrgSearch(unittest.TestCase):
             assert search_result_page.is_results_found()
 
     def test_search_python_concurrent(self):
-        # List of serach queries you want to scrape
+        # List of search queries you want to scrape
         search_queries = ["How many calories in a banana", "How much HP does a 2022 Subaru wrx have?", "selenium"]
 
         
