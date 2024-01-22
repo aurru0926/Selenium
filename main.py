@@ -8,7 +8,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def setUp(self):
         print("setup")
-        self.driver = webdriver.Firefox()
+        
         
     def search_query(self, query):
         with webdriver.Firefox() as driver:
@@ -33,7 +33,7 @@ class PythonOrgSearch(unittest.TestCase):
             executor.map(self.search_query, search_queries)
             
     def tearDown(self):
-        self.driver.close()
+        print("Finished")
 
 
 if __name__ == "__main__":
